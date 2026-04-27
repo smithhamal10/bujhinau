@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You 💖</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffc0cb, #000000);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 20px;
+    margin: 20px auto;
+    display: block;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+h1 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+button {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.yes {
+    background: #ff69b4;
+    color: white;
+}
+
+.no {
+    background: black;
+    color: pink;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="main-content">
+    <h1>Hey My Love 💖</h1>
+
+    <img src="bujinau.jpg" alt="Us together">
+
+    <p>You are my happiness, my peace, my everything...</p>
+
+    <button onclick="nextPage()">Click Me 💕</button>
+</div>
+
+<script>
+function nextPage() {
+    document.getElementById("main-content").innerHTML = `
+        <h1>Will You Be Mine Forever? 💍</h1>
+        <div class="buttons">
+            <button class="yes" onclick="yes()">YES 💖</button>
+            <button class="no" onclick="moveButton(this)">NO 😜</button>
+        </div>
+    `;
+}
+
+function moveButton(btn) {
+    btn.style.transform = `translate(${Math.random()*100-50}px, ${Math.random()*50-25}px)`;
+}
+
+function yes() {
+    document.getElementById("main-content").innerHTML =
+        "<h1>I LOVE YOU SO MUCH 💖✨</h1><p>You made me the happiest person 💕</p>";
+}
+</script>
+
+</body>
+</html>
